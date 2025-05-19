@@ -1,0 +1,20 @@
+{% extends 'sitiologin/base.html' %}
+{% block title %}Iniciar Sesión - MiLMS{% endblock %}
+{% block content %}
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    {% if form.errors %}
+      <p class="error-message">Tu nombre de usuario y contraseña no coinciden. Por favor, inténtalo de nuevo.</p>
+    {% endif %}
+    <form method="post" action="{% url 'login' %}"> {# 'login' es el name correcto aquí #}
+      {% csrf_token %}
+      {{ form.as_p }} 
+      <button type="submit" class="btn-submit">Iniciar Sesión</button>
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <div class="login-links" style="text-align: center; margin-top: 20px;">
+      <p><a href="{% url 'password_reset' %}">¿Has olvidado la contraseña?</a></p>
+      {# Si tienes registro: <p>¿No tienes una cuenta? <a href="{% url 'nombre_url_registro' %}">Regístrate</a></p> #}
+    </div>
+  </div>
+{% endblock %}

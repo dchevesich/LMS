@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #f7f9fa; /* Fondo muy claro, típico de estas plataformas */
+    color: #1c1d1f; /* Color de texto principal oscuro (casi negro) */
+    line-height: 1.6;
+}
+
+/* --- Navbar Mejorado --- */
+.navbar {
+    background-color: #fff; /* Navbar blanco */
+    padding: 0 40px; /* Más padding horizontal */
+    border-bottom: 1px solid #d1d7dc; /* Borde sutil */
+    display: flex; /* Para alinear elementos */
+    align-items: center; /* Centrar verticalmente */
+    height: 65px; /* Altura fija */
+}
+
+.navbar-brand a { /* Para el logo o nombre del sitio */
+    color: #1c1d1f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem; /* Más grande */
+}
+
+.navbar-search { /* Espacio para un futuro buscador */
+    margin-left: 30px;
+    flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.navbar-search input[type="text"] {
+    padding: 8px 15px;
+    border: 1px solid #d1d7dc;
+    border-radius: 20px; /* Bordes redondeados para el input */
+    width: 300px; /* Ancho del buscador */
+}
+
+.navbar-links { /* Para los enlaces principales de navegación */
+    margin-left: auto; /* Empuja a la derecha */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a, .navbar-links span {
+    color: #1c1d1f;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.navbar-links a:hover {
+    color: #5624d0; /* Un color púrpura/violeta típico de Udemy para hover */
+}
+
+.navbar-links .btn-logout, .navbar-links .btn-login {
+    padding: 8px 15px;
+    border: 1px solid #1c1d1f;
+    border-radius: 3px;
+    font-weight: 700;
+}
+.navbar-links .btn-logout:hover, .navbar-links .btn-login:hover {
+    background-color: #f7f9fa;
+}
+
+
+/* --- Contenedor Principal --- */
+.main-container { /* Reemplaza a 'content' o 'content-wrapper' */
+    max-width: 1340px; /* Ancho típico de Udemy */
+    margin: 30px auto;
+    padding: 0 20px; /* Padding a los lados */
+}
+
+/* --- Footer Mejorado --- */
+.footer {
+    background-color: #1c1d1f; /* Footer oscuro */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 50px; /* Espacio antes del footer */
+}
+.footer p {
+    margin: 5px 0;
+}
+
+
+/* --- Estilos para Formularios (Login) --- */
+.login-container {
+    max-width: 380px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600; /* Labels en negrita */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"], /* Si añades email */
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #8a92a3; /* Borde más oscuro para inputs */
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.btn-submit { /* Clase más genérica para botones de submit */
+    width: 100%;
+    padding: 15px;
+    background-color: #5624d0; /* Color primario de Udemy */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #401b9c; /* Más oscuro al pasar el ratón */
+}
+
+.error-message {
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Estilos para Tarjetas de Curso (para home_logeado.html) --- */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Diseño de rejilla responsive */
+    gap: 25px; /* Espacio entre tarjetas */
+    margin-top: 30px;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #d1d7dc;
+    border-radius: 4px;
+    overflow: hidden; /* Para que la imagen no se salga si es más grande */
+    text-decoration: none; /* Quita subrayado de enlaces si la tarjeta es un <a> */
+    color: #1c1d1f;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.course-card:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.course-card-image img {
+    width: 100%;
+    height: 160px; /* Altura fija para la imagen del curso */
+    object-fit: cover; /* Para que la imagen cubra el espacio sin deformarse */
+    display: block;
+}
+
+.course-card-content {
+    padding: 15px;
+    flex-grow: 1; /* Para que el contenido ocupe el espacio y el footer de la tarjeta quede abajo */
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    /* Limitar a 2 líneas y poner puntos suspensivos (opcional, requiere más CSS) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.course-card-instructor {
+    font-size: 0.8rem;
+    color: #6a6f73; /* Color más claro para el instructor */
+    margin-bottom: 10px;
+}
+
+.course-card-price { /* O estrellas de rating, etc. */
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-top: auto; /* Empuja esto al final del contenido de la tarjeta */
+}
+
+
+.navbar-links {
+    margin-left: auto; /* Empuja a la derecha */
+    display: flex;
+    align-items: center; /* Centra verticalmente los ítems */
+}
+
+/* Estilos para cada ítem directo dentro de .navbar-links */
+/* Esto incluye el div del saludo, el formulario de logout, y el enlace de login */
+.navbar-links > * {
+    margin-left: 20px; /* Espacio entre cada elemento (Categorías, Mis Aprendizajes, Saludo/Form, Login) */
+}
+
+/* Estilo para el saludo del usuario */
+.navbar-user-greeting span {
+    color: #1c1d1f; /* O el color de tu texto del navbar */
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ... (tus otros estilos del navbar: .navbar, .navbar-brand, .navbar-search) ... */
+
+.navbar-links {
+    margin-left: auto; /* Empuja este contenedor a la derecha */
+    display: flex;     /* Habilita Flexbox para los ítems internos */
+    align-items: center; /* Centra verticalmente los ítems dentro de .navbar-links */
+}
+
+/* Estilo para cada ítem directo dentro de .navbar-links */
+/* Esto aplicará al div del saludo, al formulario de logout y a cualquier enlace <a> directo */
+.navbar-links > * {
+    margin-left: 20px; /* Espacio a la izquierda de CADA ítem */
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1c1d1f; /* Color de texto por defecto para los ítems (si el navbar es blanco) */
+    text-decoration: none; /* Para los 'a' que puedan estar aquí */
+}
+
+/* Estilo específico para el saludo del usuario */
+.navbar-user-greeting span {
+    /* El color y fuente ya se heredan de .navbar-links > * */
+    /* No necesita mucho más si es solo texto */
+}
+
+.btn-logout {
+    background-color: transparent; /* Sin fondo */
+    border: 1px solid #1c1d1f;   /* Borde del color del texto */
+    color: #1c1d1f;             /* Mismo color de texto */
+    padding: 6px 12px;          /* Padding más pequeño para un botón de contorno */
+    border-radius: 3px;
+    font-family: inherit;       /* Heredar fuente */
+    font-size: 0.9rem;          /* Mismo tamaño que otros elementos */
+    font-weight: 600;           /* Mismo peso */
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #1c1d1f;  /* Fondo se vuelve oscuro en hover */
+    color: white;               /* Texto se vuelve blanco en hover */
+}
+
+/* Estilo para el ENLACE/BOTÓN de Iniciar Sesión */
+/* Lo hacemos similar al de logout para consistencia */
+.btn-login-link {
+    background-color: transparent;
+    border: 1px solid #1c1d1f;
+    color: #1c1d1f !important; /* Usar !important con cuidado, solo si es necesario */
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-login-link:hover {
+    background-color: #1c1d1f;
+    color: white !important;
+}
+

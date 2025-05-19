@@ -1,0 +1,27 @@
+{% extends 'sitiologin/base.html' %}
+
+{% block title %}Mis Cursos - MiLMS{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido de nuevo, {{ user.username }}</h1>
+    <p>Continúa aprendiendo o descubre algo nuevo.</p>
+
+    <h2>Mis Cursos</h2>
+ 
+    <div class="course-grid">  
+
+        {% for i in "1234" %} {# Bucle de ejemplo para mostrar 4 tarjetas #}
+        <a href="#" class="course-card"> 
+            <div class="course-card-image">
+                {# La imagen de placeholder es una buena idea para probar el layout #}
+                <img src="https://via.placeholder.com/300x160.png?text=Curso+Imagen+{{i}}" alt="Imagen del Curso {{i}}">
+            </div>
+            <div class="course-card-content">
+                <h3 class="course-card-title">Nombre del Curso Increíblemente Largo Para Probar Elipsis {{i}}</h3>
+                <p class="course-card-instructor">John Doe</p>
+                <p class="course-card-price">$19.99</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
