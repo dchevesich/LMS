@@ -14,13 +14,13 @@
             {# O si el logo siempre lleva al dashboard del usuario, está bien 'dashboard_usuario' #}
             <a href="{% if user.is_authenticated %}{% url 'dashboard_usuario' %}{% else %}{% comment %}URL_DEL_HOME_PUBLICO{% endcomment %}#{% endif %}">MiLMS</a>
         </div>
-        <div class="navbar-search">
-            <input type="text" placeholder="Buscar cursos...">
-        </div>
         <nav class="navbar-links">
             {# <a href="#">Categorías</a> #}
             {# <a href="#">Mis Aprendizajes</a> #}
             {% if user.is_authenticated %}
+            <div class="navbar-search">
+            <input type="text" placeholder="Buscar cursos...">
+        </div>
                 {# Envolvemos el saludo en un div para que sea un ítem flex igual que el form #}
                 <div class="navbar-user-greeting"> 
                     <span>Hola, {{ user.username }}!</span>
